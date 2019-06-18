@@ -1,0 +1,58 @@
+/* MESSAGE LIST */
+.testimonials {
+    margin: auto;
+    margin-top: 10%;
+    width: 40%;
+    padding: 5%10px;
+    background: #babfc6;
+    text-align: left;
+    border: solid 3px gray;
+    border-radius: 20px;
+    font-size: 1.5vw;
+    font-weight: 500;
+    margin-bottom: 100px;
+}
+
+.quoter {
+    text-align: center;
+    list-style: none;
+    margin: 20px 10px;
+}
+
+#reset {
+    width: 100%;
+}
+
+.formButton {
+    text-align: center;
+    width: 30%;
+    margin-top: 20px;
+    margin: auto;
+    padding: 20px;
+    font-size: 1.5em;
+    border-radius: 20px;
+}
+
+.formButton:hover {
+    background: #333;
+    color: white;
+}
+
+.inputForm {
+    display: grid;
+    padding: 0 10%;
+    box-sizing: border-box;
+    resize: both;
+}
+
+.inputForm:focus {
+    border: 3px solid #555;
+}
+
+.reviewForm {
+    text-align: center;
+}
+
+#addReview {
+    margin-top: 20px;
+}

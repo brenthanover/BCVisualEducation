@@ -1,0 +1,52 @@
+/* NAVBAR */
+
+#navbar {
+    background: white;
+    margin: 0;
+    padding: 0;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#brent {
+    padding: 10px 30px;
+    margin-top: 0;
+    color: gray;
+    text-transform: uppercase;
+    letter-spacing: .25em;
+}
+
+#navbar ul {
+    font-weight: 200;
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+#navbar ul li {
+    float: left;
+    background: #333;
+    width: 25%;
+    text-transform: uppercase;
+}
+
+#navbar ul li a {
+    display: block;
+    text-align: center;
+    padding: 15px 15px;
+    color: white;
+    text-decoration: none;
+}
+
+div ul li a:hover {
+    background: black;
+}
+
+#navbar .active {
+    background: #4CAF50;
+}
