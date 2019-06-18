@@ -24,8 +24,8 @@ const About = () => {
 
             <h2>Instagram</h2>
             <div className="instatable">
-                <div className="instapost">
-                    <InstagramEmbed
+                <div className="instapost" >
+                    <InstagramEmbed align="center"
                         url='https://instagr.am/p/Bo0h5kSBbsc/'
                         maxWidth={320}
                         hideCaption={false}
@@ -39,7 +39,7 @@ const About = () => {
                     />
                 </div>
                 <div className="instapost">
-                    <InstagramEmbed
+                    <InstagramEmbed align="center"
                         url='https://instagr.am/p/BumsbxjgwxC/'
                         maxWidth={320}
                         hideCaption={false}
@@ -53,7 +53,7 @@ const About = () => {
                     />
                 </div>
                 <div className="instapost">
-                    <InstagramEmbed
+                    <InstagramEmbed align="center"
                         url='https://instagr.am/p/Br_nQYAHHYT/'
                         maxWidth={320}
                         hideCaption={false}

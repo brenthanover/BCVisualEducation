@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../style/AddReview.css'
+import '../style/Reviews.css'
 import {connect} from "react-redux";
 import { addReview } from "../actions";
 

@@ -1,0 +1,9 @@
+.symbol {
+    max-width: 25%;
+    margin: 0;
+    float: right;
+}
+
+.symbol-div {
+    float: right;
+}

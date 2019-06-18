@@ -1,9 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-
-let dummyreview = { reviewName: 'test adder', reviewMessage: 'This is a test adder' };
-
 let reviews = [
     { reviewName: 'Santa Ono', reviewMessage: 'Brent is a swell guy. I would give him an A.'},
     { reviewName: 'Donald J. Trump', reviewMessage: 'See, this guy, he\'s, I don\'t much care for Brad, when he sits, you see you have to understand, he is not a good guy, so he sits up there up there, you know when he does, on the computer, he isn\'t that smart or bigly smart, not smart like me.'},
@@ -27,15 +24,14 @@ router.post('/', (req, res, next) => {
 /* DELETE review. */
 router.delete('/', (req, res, next) => {
    console.log("DELETING...");
-   console.log(req.body);
    console.log(req.body.reviewName);
    reviews = reviews.filter(review => { return review.reviewName !== req.body.reviewName });
    res.send(reviews);
 });
 
 /* POST MESSAGE -TYPE INTO TERMINAL
- *
- *curl -d "reviewName=a&reviewMessage=b" -X POST localhost:5000/reviews
+ * not quite working, formatting is slightly off. should be "review: {reviewName, message}"
+ * curl -d "reviewName=a&reviewMessage=b" -X POST localhost:5000/reviews
  */
 
 /* DELETE MESSAGE -TYPE INTO TERMINAL

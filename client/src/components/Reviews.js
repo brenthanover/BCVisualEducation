@@ -3,10 +3,12 @@ import '../style/Reviews.css'
 import { connect } from 'react-redux';
 import AddReview from "./AddReview"
 import ReviewDetail from './ReviewDetail'
+import Spinner from './Spinner'
 import { removeReview, selectReview, reviewsFetchData } from '../actions'
 
-
 class Reviews extends React.Component {
+
+
 
     componentDidMount() {
         this.props.fetchData('http://localhost:5000/reviews');
@@ -42,19 +44,22 @@ class Reviews extends React.Component {
         }
 
         if (this.props.isLoading) {
-            return <p>Loading...</p>
+            return <div align="center">
+                <Spinner/>
+                <p>Loading...</p>
+            </div>
         }
 
         return (
-            <div className="ui container grid">
-                <div className="ui row">
-                    <div className="column eight wide">
+            <div className="">
+                <div className="">
+                    <div className="gridview">
                         <div className="review-list">
                             { this.renderReviews() }
                         </div>
                     </div>
 
-                    <div className="ui column eight wide">
+                    <div className="gridview">
                         <AddReview />
                         <ReviewDetail />
                     </div>
