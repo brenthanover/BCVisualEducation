@@ -20,7 +20,7 @@ const reviewsErrored = (state = false, action) => {
     if (action.type === 'REVIEWS_ERRORED') {
         return action.hasErrored;
     }
-    return state;
+    return state; 
 };
 
 const manageReviewsReducer = (reviewList = [], action) => {
