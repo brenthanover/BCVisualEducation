@@ -4,7 +4,7 @@ import { combineReducers } from 'redux';
 
 const reviewsReducer = (reviewList = [], action) => {
     if (action.type === 'REVIEWS_FETCH_SUCCESS') {
-        return action.reviews.reviews;
+        return action.reviews;
     }
     return reviewList;
 };
@@ -20,25 +20,22 @@ const reviewsErrored = (state = false, action) => {
     if (action.type === 'REVIEWS_ERRORED') {
         return action.hasErrored;
     }
-    return state; 
+    return state;
 };
 
 const manageReviewsReducer = (reviewList = [], action) => {
-    console.log("manage reviews reducer");
-    console.log(action);
     switch (action.type) {
         case 'ADD_REVIEW_SUCCESS':
-            console.log("add review success");
-            console.log(action.review);
             return [...reviewList, {reviewName: action.review.reviewName, reviewMessage: action.review.reviewMessage}];
-        case  'REMOVE_REVIEW':
+        case  'REMOVE_REVIEW_SUCCESS':
             return reviewList.filter(
-                review => { return review.reviewName !== action.payload }
+                review => {
+                    return review.reviewName !== action.payload }
             );
         case  'REVIEWS_FETCH_SUCCESS':
             console.log("success in reducer");
-            console.log(action.reviews.reviews);
-            return action.reviews.reviews;
+            console.log(action.reviews);
+            return action.reviews;
         default:
             return reviewList;
     }

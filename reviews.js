@@ -18,16 +18,29 @@ router.get('/', (req, res, next) => {
 
 /* POST reviews. */
 router.post('/', (req, res, next) => {
-    const newUser = req.body;
     console.log("POSTING...");
     console.log(req.body);
-    reviews = [...reviews, req.body];
+    reviews = [...reviews, req.body.review];
     res.send(reviews);
+});
+
+/* DELETE review. */
+router.delete('/', (req, res, next) => {
+   console.log("DELETING...");
+   console.log(req.body);
+   console.log(req.body.reviewName);
+   reviews = reviews.filter(review => { return review.reviewName !== req.body.reviewName });
+   res.send(reviews);
 });
 
 /* POST MESSAGE -TYPE INTO TERMINAL
  *
- *curl -d "reviewName"="a","reviewMessage"="b" -X POST localhost:5000/reviews
+ *curl -d "reviewName=a&reviewMessage=b" -X POST localhost:5000/reviews
+ */
+
+/* DELETE MESSAGE -TYPE INTO TERMINAL
+ *
+ *curl -X POST -d "reviewName=Santa Ono" localhost:5000/reviews
  */
 
 

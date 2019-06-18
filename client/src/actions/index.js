@@ -15,8 +15,6 @@ export const isReviewsLoading = (bool) => {
 };
 
 export const reviewsSuccess = (reviews) => {
-    console.log("success!!!!!!!");
-    console.log(reviews);
     return {
         type: 'REVIEWS_FETCH_SUCCESS',
         reviews: reviews
@@ -31,86 +29,38 @@ export const reviewsFetchData = (url) => {
         axios.get(url)
             .then((response) => {
                 if (!response.data) {
-                    console.log("not okay!");
-                    console.log(response.ok);
                     throw Error(response.statusText);
                 }
                 dispatch(isReviewsLoading(false));
-                console.log("in action");
-                console.log(response.data);
-                dispatch(reviewsSuccess([]));
-                console.log("just dispatched the action!")
+                dispatch(reviewsSuccess(response.data));
                 return response;
             })
-            .catch(() => {
+            .catch((err) => {
                 console.log("There is an error occurring");
+                console.log(err);
                 dispatch(reviewsErrored(true))
             });
-
-        // fetch(url)
-        //     .then((response) => {
-        //         console.log("alskfjslkdfj");
-        //         console.log(response.ok);
-        //         if (!response.ok) {
-        //             throw Error(response.statusText);
-        //         }
-        //         dispatch(isReviewsLoading(false));
-        //         return response;
-        //     })
-        //     .then((response) => response.json())
-        //     .then((reviews) => {
-        //         console.log("in action");
-        //         console.log(reviews);
-        //         dispatch(reviewsSuccess(reviews));
-        //     })
-        //     .catch(() => {
-        //         console.log("it's all fucked up");
-        //         dispatch(reviewsErrored(true))
-        //     });
     };
 };
 
-// export const addReview = (url, reviewwwww) => {
-//     return (dispatch) => {
-//         dispatch(isReviewsLoading(true));
-//
-//         const review = {reviewName: "brent", reviewMessage: "dope dude"};
-//
-//         fetch(url, {
-//             method: 'PUT',
-//             body: review
-//         })
-//             .then((response) => {
-//                 if (!response.ok) {
-//                     throw Error(response.statusText);
-//                 }
-//                 dispatch(isReviewsLoading(false));
-//                 return response;
-//             })
-//             .then((response) => response.json())
-//             .then((review) => dispatch(addReviewSuccess(review)))
-//             .catch(() => dispatch(reviewsErrored(true)));
-//         console.log("done adding");
-//         dispatch(addReviewSuccess(review))
-//     };
-// };
-
-
-
-export const addReview = ({ review }) => {
+export const addReview = (review) => {
     return dispatch => {
-        // dispatch(addReviewStarted());
-        //
-        // axios
-        //     .post('http://localhost:5000/reviews', {
-        //         review: review
-        //     })
-        //     .then(res => {
-        //         dispatch(addReviewSuccess(res.data));
-        //     })
-        //     .catch(err => {
-        //         dispatch(addReviewFailure(err.message));
-        //     });
+        dispatch(addReviewStarted());
+        console.log("posting review");
+        console.log(review);
+
+        axios
+            .post('http://localhost:5000/reviews', {
+                review: review
+            })
+            .then(res => {
+                dispatch(addReviewSuccess(review));
+            })
+            .catch(err => {
+                console.log("There is an error occurring");
+                console.log(err);
+                dispatch(addReviewFailure(err.message));
+            });
     };
 };
 
@@ -132,10 +82,27 @@ export const addReviewFailure = error => ({
     }
 });
 
-export const removeReview = (reviewName) => {
+export const removeReviewSuccess = (reviewName) => {
     return {
-        type: 'REMOVE_REVIEW',
+        type: 'REMOVE_REVIEW_SUCCESS',
         payload: reviewName
+    };
+};
+
+export const removeReview = (reviewName) => {
+    return dispatch => {
+        axios
+            .delete('http://localhost:5000/reviews', {
+                data: { reviewName: reviewName }
+            })
+            .then(res => {
+                console.log("sending action to remove");
+                console.log(reviewName);
+                dispatch(removeReviewSuccess(reviewName));
+            })
+            .catch(err => {
+                dispatch(addReviewFailure(err.message));
+            });
     };
 };
 

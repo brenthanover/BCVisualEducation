@@ -12,8 +12,6 @@ class AddReview extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log("adding");
-        console.log(this.state);
         this.props.addReview(this.state);
     };
 

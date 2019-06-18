@@ -10,8 +10,6 @@ class Reviews extends React.Component {
 
     componentDidMount() {
         this.props.fetchData('http://localhost:5000/reviews');
-        console.log("mounting");
-        console.log(this.props);
     }
 
     renderReviews() {
@@ -47,8 +45,6 @@ class Reviews extends React.Component {
             return <p>Loading...</p>
         }
 
-        console.log("rendering");
-        console.log(this.props.reviewList);
         return (
             <div className="ui container grid">
                 <div className="ui row">
