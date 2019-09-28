@@ -5,6 +5,15 @@ import AddReview from "./AddReview"
 import ReviewDetail from './ReviewDetail'
 import Spinner from './Spinner'
 import { removeReview, selectReview, reviewsFetchData } from '../actions'
+import LineChart from "./LineChart";
+import TableauGraph from "./TableauGraph";
+import victory from 'victory';
+import {
+    VictoryBar,
+    VictoryChart,
+    VictoryLine,
+    VictoryPie,
+} from "victory";
 
 class Reviews extends React.Component {
 
@@ -51,19 +60,47 @@ class Reviews extends React.Component {
         }
 
         return (
-            <div className="">
-                <div className="">
-                    <div className="gridview">
-                        <div className="review-list">
-                            { this.renderReviews() }
-                        </div>
-                    </div>
-
-                    <div className="gridview">
-                        <AddReview />
-                        <ReviewDetail />
-                    </div>
+            <div>
+                <div>
+                    <TableauGraph/>
                 </div>
+
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                {/*<div className="">*/}
+                {/*    <div className="gridview">*/}
+                {/*        <div className="review-list">*/}
+                {/*            { this.renderReviews() }*/}
+                {/*        </div>*/}
+                {/*    </div>*/}
+
+                {/*    <div className="gridview">*/}
+                {/*        <AddReview />*/}
+                {/*        <ReviewDetail />*/}
+                {/*    </div>*/}
+                {/*</div>*/}
 
             </div>
         )

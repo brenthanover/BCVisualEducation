@@ -11,7 +11,7 @@ class CustomNavbar extends React.Component {
             <div id="navbar">
                 <div className="grid">
                     <div className="gridblock">
-                        <div id="brent">brent hanover</div>
+                        <div id="brent">data visualization for your bc schools</div>
                     </div>
                     <div className="symbolblock">
                         <ReactSymbol/>
@@ -20,8 +20,8 @@ class CustomNavbar extends React.Component {
                 <ul>
                     <li><NavLink to="/Home">Home</NavLink></li>
                     <li><NavLink to="/about">About</NavLink></li>
-                    <li><NavLink to="/reviewpage">Reviews</NavLink></li>
-                    <li><NavLink to="/assignment">Assignment</NavLink></li>
+                    <li><NavLink to="/reviewpage">Browse districts</NavLink></li>
+                    <li><NavLink to="/assignment">data by district</NavLink></li>
                 </ul>
             </div>
         );
