@@ -1,10 +1,13 @@
 import React from 'react';
 import '../style/About.css'
+import TableauGraph from "./TableauGraph";
 
 const About = () => {
     return (
         <div>
-            about
+            <div>
+                <TableauGraph/>
+            </div>
         </div>
     )
 };

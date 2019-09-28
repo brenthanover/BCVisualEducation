@@ -11,7 +11,7 @@ class LineChart extends React.Component {
     }
 
     initViz() {
-        const vizUrl = 'https://10ay.online.tableau.com/t/deloittehackathon/views/20152016graduationrates/Sheet1?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link';
+        const vizUrl = 'https://10ay.online.tableau.com/t/deloittehackathon/views/20152016graduationrates/Sheet1?:origin=card_share_link&:embed=n';
         const vizContainer = this.vizContainer;
         let viz = new window.tableau.Viz(vizContainer, vizUrl)
     }
