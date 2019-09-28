@@ -1,19 +1,9 @@
 import React from 'react';
 import '../style/Reviews.css'
 import { connect } from 'react-redux';
-import AddReview from "./AddReview"
-import ReviewDetail from './ReviewDetail'
 import Spinner from './Spinner'
 import { removeReview, selectReview, reviewsFetchData } from '../actions'
-import LineChart from "./LineChart";
 import TableauGraph from "./TableauGraph";
-import victory from 'victory';
-import {
-    VictoryBar,
-    VictoryChart,
-    VictoryLine,
-    VictoryPie,
-} from "victory";
 
 class Reviews extends React.Component {
 
@@ -48,16 +38,16 @@ class Reviews extends React.Component {
     }
 
     render() {
-        if (this.props.hasErrored) {
-            return <p>Sorry! Error rendering</p>
-        }
-
-        if (this.props.isLoading) {
-            return <div align="center">
-                <Spinner/>
-                <p>Loading...</p>
-            </div>
-        }
+        // if (this.props.hasErrored) {
+        //     return <p>Sorry! Error rendering</p>
+        // }
+        //
+        // if (this.props.isLoading) {
+        //     return <div align="center">
+        //         <Spinner/>
+        //         <p>Loading...</p>
+        //     </div>
+        // }
 
         return (
             <div>
@@ -65,30 +55,6 @@ class Reviews extends React.Component {
                     <TableauGraph/>
                 </div>
 
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
                 {/*<div className="">*/}
                 {/*    <div className="gridview">*/}
                 {/*        <div className="review-list">*/}
