@@ -3,7 +3,7 @@ import '../style/Reviews.css'
 import { connect } from 'react-redux';
 import Spinner from './Spinner'
 import { removeReview, selectReview, reviewsFetchData } from '../actions'
-import TableauGraph from "./TableauGraph";
+import TableauGraph3 from "./TableauGraph3";
 
 class Reviews extends React.Component {
 
@@ -52,7 +52,7 @@ class Reviews extends React.Component {
         return (
             <div>
                 <div>
-                    <TableauGraph/>
+                    <TableauGraph3/>
                 </div>
 
                 {/*<div className="">*/}

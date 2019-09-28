@@ -18,9 +18,9 @@ class CustomNavbar extends React.Component {
                     </div>
                 </div>
                 <ul>
-                    <li><NavLink to="/Home">Home</NavLink></li>
-                    <li><NavLink to="/about">About</NavLink></li>
-                    <li><NavLink to="/reviewpage">Browse districts</NavLink></li>
+                    <li><NavLink to="/Home">Facilities</NavLink></li>
+                    <li><NavLink to="/about">total graduation rates</NavLink></li>
+                    <li><NavLink to="/reviewpage">Eligible graduation rates</NavLink></li>
                     <li><NavLink to="/assignment">data by district</NavLink></li>
                 </ul>
             </div>
